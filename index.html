@@ -34,37 +34,24 @@
             position: relative;
         }
 
-        .header { 
-            position: relative; 
-            text-align: center; 
-            background: #000;
-            height: 200px;
+        /* --- PANTALLA DE BLOQUEO POR FECHA --- */
+        #lock-screen {
+            display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 74, 153, 0.98); z-index: 9999;
+            flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; color: white; padding: 30px; box-sizing: border-box;
         }
-        
-        .cover-photo { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            background: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1000&auto=format&fit=crop') center;
-            filter: brightness(0.5);
-        }
+        .is-blocked #lock-screen { display: flex; }
+        .is-blocked .content-to-hide { filter: blur(10px); pointer-events: none; }
 
-        /* CORRECCIÓN DEL LOGO RECTANGULAR */
+        .header { position: relative; text-align: center; background: #000; height: 200px; }
+        .cover-photo { width: 100%; height: 100%; object-fit: cover; background: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1000&auto=format&fit=crop') center; filter: brightness(0.5); }
+
         .profile-logo { 
-            width: 180px; 
-            height: auto; 
-            min-height: 100px;
-            background: #004a99; 
-            border-radius: 12px; 
-            border: 4px solid var(--accent-gold); 
-            position: absolute; 
-            bottom: -50px; 
-            left: 50%; 
-            transform: translateX(-50%); 
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4); 
-            z-index: 2;
-            object-fit: contain;
-            padding: 8px;
+            width: 180px; height: auto; min-height: 100px; background: #004a99; 
+            border-radius: 12px; border: 4px solid var(--accent-gold); 
+            position: absolute; bottom: -50px; left: 50%; 
+            transform: translateX(-50%); z-index: 2; object-fit: contain; padding: 8px;
         }
 
         .business-info { margin-top: 65px; text-align: center; padding: 0 20px; }
@@ -72,160 +59,96 @@
         .representative-name { color: var(--primary-blue); font-size: 18px; font-weight: bold; margin-bottom: 5px; }
         .business-tagline { color: var(--text-gray); font-size: 14px; margin-bottom: 12px; font-weight: bold; text-transform: uppercase; font-style: italic; }
         
-        .action-buttons {
-            display: grid; 
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 12px; 
-            padding: 20px; 
-            background: #f8f9fa;
-            border-top: 1px solid #eee;
-        }
-
-        .btn-item {
-            display: flex; flex-direction: column; align-items: center; 
-            text-decoration: none; color: var(--primary-blue); font-size: 11px; font-weight: 700;
-        }
-
-        .btn-icon {
-            width: 50px; height: 50px; 
-            background: var(--primary-blue);
-            border-radius: 12px; 
-            display: flex; justify-content: center; align-items: center; 
-            margin-bottom: 8px; color: var(--accent-gold); font-size: 20px;
-        }
+        .action-buttons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 20px; background: #f8f9fa; border-top: 1px solid #eee; }
+        .btn-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: var(--primary-blue); font-size: 11px; font-weight: 700; }
+        .btn-icon { width: 50px; height: 50px; background: var(--primary-blue); border-radius: 12px; display: flex; justify-content: center; align-items: center; margin-bottom: 8px; color: var(--accent-gold); font-size: 20px; }
 
         .section { padding: 20px; }
         .section h2 { font-size: 16px; color: var(--primary-blue); border-left: 5px solid var(--accent-gold); padding-left: 12px; margin-bottom: 15px; text-transform: uppercase; font-weight: 800; }
-        
-        .services-list {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 8px;
-        }
-
-        .service-card {
-            background: #ffffff;
-            padding: 14px;
-            border-radius: 10px;
-            border: 1px solid #f0f0f0;
-            display: flex;
-            align-items: center;
-            font-weight: 600;
-            color: #333;
-            font-size: 13px;
-        }
-
+        .service-card { background: #ffffff; padding: 14px; border-radius: 10px; border: 1px solid #f0f0f0; display: flex; align-items: center; font-weight: 600; color: #333; font-size: 13px; margin-bottom: 8px; }
         .service-card i { margin-right: 15px; color: var(--primary-blue); font-size: 18px; width: 25px; text-align: center; }
 
-        .info-list { list-style: none; padding: 0; margin: 0; background: #fff; }
-        .info-item {
-            display: flex; padding: 15px 20px; border-top: 1px solid #f0f0f0; 
-            align-items: center; text-decoration: none; color: #333;
-            font-size: 13px;
-        }
-        .info-item i { width: 35px; height: 35px; color: var(--accent-gold); font-size: 16px; background: var(--primary-blue); display: flex; align-items: center; justify-content: center; border-radius: 8px; margin-right: 15px; }
-
-        .footer-credits {
-            margin-top: auto;
-            padding: 25px;
-            text-align: center;
-            background-color: #f8f9fa;
-            font-size: 11px;
-            color: var(--text-gray);
-            border-top: 1px solid #eee;
-        }
-
-        #edit-toggle {
-            position: fixed; bottom: 20px; right: 20px; 
-            background: var(--accent-gold); color: var(--primary-blue);
-            border: none; border-radius: 50%; width: 55px; height: 55px;
-            font-size: 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); cursor: pointer;
-            z-index: 1000;
-        }
-
-        .edit-mode [contenteditable="true"] { background: #fffde7; outline: 1px dashed var(--accent-gold); }
+        .footer-credits { margin-top: auto; padding: 25px; text-align: center; background-color: #f8f9fa; font-size: 11px; color: var(--text-gray); border-top: 1px solid #eee; }
     </style>
 </head>
-<body class="edit-mode">
+<body>
 
-<button id="edit-toggle" title="Guardar cambios"><i class="fa-solid fa-save"></i></button>
-
-<div class="card-container">
-    <div class="header">
-        <div class="cover-photo"></div>
-        <img src="alfonsoeme.PNG" alt="Logo Alfonsoeme" class="profile-logo">
-    </div>
-
-    <div class="business-info">
-        <h1 contenteditable="true">Alfonsoeme S.A.</h1>
-        <div class="representative-name" contenteditable="true">WHYSNE WILLIAM WEEBER</div>
-        <div class="business-tagline" contenteditable="true">Siempre Listos</div>
-    </div>
-
-    <div class="action-buttons">
-        <a href="tel:3217159253" id="callBtn" class="btn-item">
-            <div class="btn-icon"><i class="fa-solid fa-phone"></i></div>
-            Llamar
-        </a>
-        <a href="https://wa.me/573217159253" target="_blank" class="btn-item">
-            <div class="btn-icon"><i class="fa-brands fa-whatsapp"></i></div>
-            WhatsApp
-        </a>
-        <a href="mailto:alfonsoeme@alfonsoeme.com" class="btn-item">
-            <div class="btn-icon"><i class="fa-solid fa-envelope"></i></div>
-            Correo
+<div id="main-card" class="card-container">
+    
+    <div id="lock-screen">
+        <i class="fa-solid fa-lock" style="font-size: 50px; color: var(--accent-gold); margin-bottom: 20px;"></i>
+        <h2>SERVICIO SUSPENDIDO</h2>
+        <p>Esta tarjeta digital requiere renovación de licencia.</p>
+        <p style="font-size: 13px;">Contacte a soporte para reactivar:</p>
+        <a href="https://wa.me/573117700431?text=Hola%20Vibras%20Positivas,%20necesito%20renovar%20la%20tarjeta%20de%20Alfonsoeme" 
+           style="background:var(--accent-gold); color:var(--primary-blue); padding:12px 25px; border-radius:25px; text-decoration:none; font-weight:900; margin-top:15px; display:inline-block;">
+           SOLICITAR ACTIVACIÓN
         </a>
     </div>
 
-    <div class="section">
-        <h2>Nuestras Líneas</h2>
-        <div class="services-list">
-            <div class="service-card"><i class="fa-solid fa-shirt"></i> Telas y Línea Hogar [cite: 11]</div>
-            <div class="service-card"><i class="fa-solid fa-soap"></i> Aseo y Amenities [cite: 11]</div>
-            <div class="service-card"><i class="fa-solid fa-shoe-prints"></i> Calzado y Croydon [cite: 11, 22]</div>
-            <div class="service-card"><i class="fa-solid fa-hammer"></i> Ferretería e Irwin [cite: 11, 25]</div>
-            <div class="service-card"><i class="fa-solid fa-mask-safety"></i> Seguridad Industrial y Libus [cite: 11, 32]</div>
-            <div class="service-card"><i class="fa-solid fa-faucet"></i> Soldadura y Stanley [cite: 11, 27]</div>
+    <div class="content-to-hide">
+        <div class="header">
+            <div class="cover-photo"></div>
+            <img src="alfonsoeme.PNG" alt="Logo Alfonsoeme" class="profile-logo">
         </div>
-    </div>
 
-    <ul class="info-list">
-        <a href="https://www.alfonsoeme.com" target="_blank" class="info-item">
-            <i class="fa-solid fa-globe"></i>
-            <div><b>Sitio Web Oficial</b> [cite: 20]<br><small>www.alfonsoeme.com</small></div>
-        </a>
-        
-        <div class="info-item">
-            <i class="fa-solid fa-location-dot"></i>
-            <div>
-                <b>Barranquilla (Sede Principal)</b> [cite: 19]<br>
-                <small contenteditable="true">Via 40 No. 77-77</small>
+        <div class="business-info">
+            <h1>Alfonsoeme S.A.</h1>
+            <div class="representative-name">WHYSNE WILLIAM WEEBER</div>
+            <div class="business-tagline">Siempre Listos</div>
+        </div>
+
+        <div class="action-buttons">
+            <a href="tel:3217159253" class="btn-item">
+                <div class="btn-icon"><i class="fa-solid fa-phone"></i></div> Llamar
+            </a>
+            <a href="https://wa.me/573217159253" target="_blank" class="btn-item">
+                <div class="btn-icon"><i class="fa-brands fa-whatsapp"></i></div> WhatsApp
+            </a>
+            <a href="mailto:alfonsoeme@alfonsoeme.com" class="btn-item">
+                <div class="btn-icon"><i class="fa-solid fa-envelope"></i></div> Correo
+            </a>
+        </div>
+
+        <div class="section">
+            <h2>Nuestras Líneas</h2>
+            <div class="services-list">
+                <div class="service-card"><i class="fa-solid fa-shirt"></i> Telas y Línea Hogar</div>
+                <div class="service-card"><i class="fa-solid fa-soap"></i> Aseo y Amenities</div>
+                <div class="service-card"><i class="fa-solid fa-shoe-prints"></i> Calzado y Croydon</div>
+                <div class="service-card"><i class="fa-solid fa-hammer"></i> Ferretería e Irwin</div>
+                <div class="service-card"><i class="fa-solid fa-mask-safety"></i> Seguridad Industrial y Libus</div>
+                <div class="service-card"><i class="fa-solid fa-faucet"></i> Soldadura y Stanley</div>
             </div>
         </div>
 
-        <div class="info-item">
-            <i class="fa-solid fa-city"></i>
-            <div>
-                <b>Zona de Atención</b> <br>
-                <small contenteditable="true">Montería y Costa Atlántica</small>
-            </div>
-        </div>
-    </ul>
-
-    <footer class="footer-credits">
-        App desarrollada por <b>Vibras Positivas</b><br>
-        Derecho de autor - <b>(3117700431)</b>
-    </footer>
+        <footer class="footer-credits">
+            App desarrollada por <b>Vibras Positivas</b><br>
+            Derecho de autor - <b>(3117700431)</b>
+        </footer>
+    </div>
 </div>
 
 <script>
-    const saveBtn = document.getElementById('edit-toggle');
-    saveBtn.addEventListener('click', () => {
-        document.body.classList.toggle('edit-mode');
-        const isEditing = document.body.classList.contains('edit-mode');
-        saveBtn.innerHTML = isEditing ? '<i class="fa-solid fa-save"></i>' : '<i class="fa-solid fa-pencil"></i>';
-        if(!isEditing) alert("¡Información actualizada!");
-    });
+    // ==========================================
+    // CONTROL DE DESBLOQUEO PARA HAROLD
+    // ==========================================
+    
+    // CAMBIA ESTA FECHA PARA DESBLOQUEAR (Año, Mes-1, Día)
+    // Ejemplo: Para el 25 de marzo de 2026, pones: (2026, 2, 25)
+    // Nota: El mes empieza en 0 (Enero=0, Febrero=1, Marzo=2...)
+    const FECHA_VENCIMIENTO = new Date(2026, 2, 23); 
+
+    function verificarLicencia() {
+        const hoy = new Date();
+        const mainCard = document.getElementById('main-card');
+
+        if (hoy > FECHA_VENCIMIENTO) {
+            mainCard.classList.add('is-blocked');
+        }
+    }
+
+    verificarLicencia();
 </script>
 
 </body>
