@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarjeta Digital - Alfonsoeme S.A.</title>
+    <title>Tarjeta Digital - Alfonsoeme</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-blue: #004a99; /* Azul corporativo Alfonsoeme */
-            --accent-gold: #ffcc00;  /* Dorado/Amarillo Alfonsoeme */
+            --primary-blue: #004a99; 
+            --accent-gold: #ffcc00;  
             --white: #ffffff;
             --bg-gradient: linear-gradient(135deg, #004a99 0%, #002d5e 100%);
             --text-gray: #7f8c8d;
@@ -38,34 +38,37 @@
             position: relative; 
             text-align: center; 
             background: #000;
+            height: 200px;
         }
         
         .cover-photo { 
             width: 100%; 
-            height: 200px; 
+            height: 100%; 
             object-fit: cover; 
             background: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1000&auto=format&fit=crop') center;
             filter: brightness(0.5);
         }
 
+        /* CORRECCIÓN DEL LOGO RECTANGULAR */
         .profile-logo { 
-            width: 160px; 
-            height: 160px; 
-            background: white; 
+            width: 180px; 
+            height: auto; 
+            min-height: 100px;
+            background: #004a99; 
             border-radius: 12px; 
             border: 4px solid var(--accent-gold); 
             position: absolute; 
-            bottom: -80px; 
+            bottom: -50px; 
             left: 50%; 
             transform: translateX(-50%); 
             box-shadow: 0 8px 20px rgba(0,0,0,0.4); 
             z-index: 2;
             object-fit: contain;
-            padding: 5px;
+            padding: 8px;
         }
 
-        .business-info { margin-top: 95px; text-align: center; padding: 0 20px; }
-        .business-info h1 { font-size: 28px; margin-bottom: 2px; color: var(--primary-blue); text-transform: uppercase; font-weight: 900; letter-spacing: 1.5px; }
+        .business-info { margin-top: 65px; text-align: center; padding: 0 20px; }
+        .business-info h1 { font-size: 26px; margin-bottom: 2px; color: var(--primary-blue); text-transform: uppercase; font-weight: 900; letter-spacing: 1px; }
         .representative-name { color: var(--primary-blue); font-size: 18px; font-weight: bold; margin-bottom: 5px; }
         .business-tagline { color: var(--text-gray); font-size: 14px; margin-bottom: 12px; font-weight: bold; text-transform: uppercase; font-style: italic; }
         
@@ -150,7 +153,7 @@
 <div class="card-container">
     <div class="header">
         <div class="cover-photo"></div>
-        <img src="logo_alfonsoeme.PNG" alt="Logo Alfonsoeme" class="profile-logo">
+        <img src="alfonsoeme.PNG" alt="Logo Alfonsoeme" class="profile-logo">
     </div>
 
     <div class="business-info">
@@ -177,25 +180,25 @@
     <div class="section">
         <h2>Nuestras Líneas</h2>
         <div class="services-list">
-            <div class="service-card"><i class="fa-solid fa-shirt"></i> Telas y Línea Hogar</div>
-            <div class="service-card"><i class="fa-solid fa-soap"></i> Aseo y Amenities</div>
-            <div class="service-card"><i class="fa-solid fa-shoe-prints"></i> Calzado e Incal</div>
-            <div class="service-card"><i class="fa-solid fa-hammer"></i> Ferretería e Irwin</div>
-            <div class="service-card"><i class="fa-solid fa-mask-safety"></i> Seguridad Industrial y Libus</div>
-            <div class="service-card"><i class="fa-solid fa-faucet"></i> Soldadura y Stanley</div>
+            <div class="service-card"><i class="fa-solid fa-shirt"></i> Telas y Línea Hogar [cite: 11]</div>
+            <div class="service-card"><i class="fa-solid fa-soap"></i> Aseo y Amenities [cite: 11]</div>
+            <div class="service-card"><i class="fa-solid fa-shoe-prints"></i> Calzado y Croydon [cite: 11, 22]</div>
+            <div class="service-card"><i class="fa-solid fa-hammer"></i> Ferretería e Irwin [cite: 11, 25]</div>
+            <div class="service-card"><i class="fa-solid fa-mask-safety"></i> Seguridad Industrial y Libus [cite: 11, 32]</div>
+            <div class="service-card"><i class="fa-solid fa-faucet"></i> Soldadura y Stanley [cite: 11, 27]</div>
         </div>
     </div>
 
     <ul class="info-list">
         <a href="https://www.alfonsoeme.com" target="_blank" class="info-item">
             <i class="fa-solid fa-globe"></i>
-            <div><b>Sitio Web Oficial</b><br><small>www.alfonsoeme.com</small></div>
+            <div><b>Sitio Web Oficial</b> [cite: 20]<br><small>www.alfonsoeme.com</small></div>
         </a>
         
         <div class="info-item">
             <i class="fa-solid fa-location-dot"></i>
             <div>
-                <b>Barranquilla (Sede Principal)</b><br>
+                <b>Barranquilla (Sede Principal)</b> [cite: 19]<br>
                 <small contenteditable="true">Via 40 No. 77-77</small>
             </div>
         </div>
@@ -203,22 +206,20 @@
         <div class="info-item">
             <i class="fa-solid fa-city"></i>
             <div>
-                <b>Zona de Atención</b><br>
+                <b>Zona de Atención</b> <br>
                 <small contenteditable="true">Montería y Costa Atlántica</small>
             </div>
         </div>
     </ul>
 
     <footer class="footer-credits">
-        Desarrollado por <b>Vibras Positivas</b><br>
-        © 2026 Alfonsoeme - Todos los derechos reservados
+        App desarrollada por <b>Vibras Positivas</b><br>
+        Derecho de autor - <b>(3117700431)</b>
     </footer>
 </div>
 
 <script>
     const saveBtn = document.getElementById('edit-toggle');
-    const callBtn = document.getElementById('callBtn');
-
     saveBtn.addEventListener('click', () => {
         document.body.classList.toggle('edit-mode');
         const isEditing = document.body.classList.contains('edit-mode');
