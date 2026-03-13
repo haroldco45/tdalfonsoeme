@@ -34,7 +34,7 @@
             position: relative;
         }
 
-        /* --- PANTALLA DE BLOQUEO POR FECHA --- */
+        /* PANTALLA DE BLOQUEO */
         #lock-screen {
             display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0, 74, 153, 0.98); z-index: 9999;
@@ -55,10 +55,10 @@
         }
 
         .business-info { margin-top: 65px; text-align: center; padding: 0 20px; }
-        .business-info h1 { font-size: 26px; margin-bottom: 2px; color: var(--primary-blue); text-transform: uppercase; font-weight: 900; letter-spacing: 1px; }
-        .representative-name { color: var(--primary-blue); font-size: 18px; font-weight: bold; margin-bottom: 5px; }
+        .business-info h1 { font-size: 26px; margin-bottom: 2px; color: var(--primary-blue); text-transform: uppercase; font-weight: 900; }
+        .representative-name { color: var(--primary-blue); font-size: 18px; font-weight: bold; }
         .business-tagline { color: var(--text-gray); font-size: 14px; margin-bottom: 12px; font-weight: bold; text-transform: uppercase; font-style: italic; }
-        
+
         .action-buttons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 20px; background: #f8f9fa; border-top: 1px solid #eee; }
         .btn-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: var(--primary-blue); font-size: 11px; font-weight: 700; }
         .btn-icon { width: 50px; height: 50px; background: var(--primary-blue); border-radius: 12px; display: flex; justify-content: center; align-items: center; margin-bottom: 8px; color: var(--accent-gold); font-size: 20px; }
@@ -67,6 +67,10 @@
         .section h2 { font-size: 16px; color: var(--primary-blue); border-left: 5px solid var(--accent-gold); padding-left: 12px; margin-bottom: 15px; text-transform: uppercase; font-weight: 800; }
         .service-card { background: #ffffff; padding: 14px; border-radius: 10px; border: 1px solid #f0f0f0; display: flex; align-items: center; font-weight: 600; color: #333; font-size: 13px; margin-bottom: 8px; }
         .service-card i { margin-right: 15px; color: var(--primary-blue); font-size: 18px; width: 25px; text-align: center; }
+
+        .info-list { list-style: none; padding: 0; margin: 0; background: #fff; }
+        .info-item { display: flex; padding: 15px 20px; border-top: 1px solid #f0f0f0; align-items: center; text-decoration: none; color: #333; font-size: 13px; }
+        .info-item i { width: 35px; height: 35px; color: var(--accent-gold); font-size: 16px; background: var(--primary-blue); display: flex; align-items: center; justify-content: center; border-radius: 8px; margin-right: 15px; }
 
         .footer-credits { margin-top: auto; padding: 25px; text-align: center; background-color: #f8f9fa; font-size: 11px; color: var(--text-gray); border-top: 1px solid #eee; }
     </style>
@@ -79,7 +83,6 @@
         <i class="fa-solid fa-lock" style="font-size: 50px; color: var(--accent-gold); margin-bottom: 20px;"></i>
         <h2>SERVICIO SUSPENDIDO</h2>
         <p>Esta tarjeta digital requiere renovación de licencia.</p>
-        <p style="font-size: 13px;">Contacte a soporte para reactivar:</p>
         <a href="https://wa.me/573117700431?text=Hola%20Vibras%20Positivas,%20necesito%20renovar%20la%20tarjeta%20de%20Alfonsoeme" 
            style="background:var(--accent-gold); color:var(--primary-blue); padding:12px 25px; border-radius:25px; text-decoration:none; font-weight:900; margin-top:15px; display:inline-block;">
            SOLICITAR ACTIVACIÓN
@@ -113,14 +116,37 @@
         <div class="section">
             <h2>Nuestras Líneas</h2>
             <div class="services-list">
-                <div class="service-card"><i class="fa-solid fa-shirt"></i> Telas y Línea Hogar</div>
-                <div class="service-card"><i class="fa-solid fa-soap"></i> Aseo y Amenities</div>
-                <div class="service-card"><i class="fa-solid fa-shoe-prints"></i> Calzado y Croydon</div>
-                <div class="service-card"><i class="fa-solid fa-hammer"></i> Ferretería e Irwin</div>
-                <div class="service-card"><i class="fa-solid fa-mask-safety"></i> Seguridad Industrial y Libus</div>
-                <div class="service-card"><i class="fa-solid fa-faucet"></i> Soldadura y Stanley</div>
+                [span_0](start_span)<div class="service-card"><i class="fa-solid fa-shirt"></i> Telas y Línea Hogar[span_0](end_span)</div>
+                [span_1](start_span)<div class="service-card"><i class="fa-solid fa-soap"></i> Aseo y Amenities[span_1](end_span)</div>
+                [span_2](start_span)<div class="service-card"><i class="fa-solid fa-shoe-prints"></i> Calzado y Croydon[span_2](end_span)</div>
+                [span_3](start_span)<div class="service-card"><i class="fa-solid fa-hammer"></i> Ferretería e Irwin[span_3](end_span)</div>
+                [span_4](start_span)<div class="service-card"><i class="fa-solid fa-mask-safety"></i> Seguridad Industrial y Libus[span_4](end_span)</div>
+                [span_5](start_span)<div class="service-card"><i class="fa-solid fa-faucet"></i> Soldadura y Stanley[span_5](end_span)</div>
             </div>
         </div>
+
+        <ul class="info-list">
+            <a href="https://www.alfonsoeme.com" target="_blank" class="info-item">
+                <i class="fa-solid fa-globe"></i>
+                [span_6](start_span)<div><b>Sitio Web Oficial</b>[span_6](end_span)<br><small>www.alfonsoeme.com</small></div>
+            </a>
+            
+            <a href="https://maps.app.goo.gl/Yp6rXn8XU6C6eA7Z7" target="_blank" class="info-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                    [span_7](start_span)<b>Ubicación Barranquilla</b>[span_7](end_span)<br>
+                    <small>Via 40 No. 77-77</small>
+                </div>
+            </a>
+
+            <div class="info-item">
+                <i class="fa-solid fa-city"></i>
+                <div>
+                    <b>Zona de Atención</b><br>
+                    [span_8](start_span)<small>Montería y Costa Atlántica</small>[span_8](end_span)
+                </div>
+            </div>
+        </ul>
 
         <footer class="footer-credits">
             App desarrollada por <b>Vibras Positivas</b><br>
@@ -130,24 +156,17 @@
 </div>
 
 <script>
-    // ==========================================
-    // CONTROL DE DESBLOQUEO PARA HAROLD
-    // ==========================================
-    
-    // CAMBIA ESTA FECHA PARA DESBLOQUEAR (Año, Mes-1, Día)
-    // Ejemplo: Para el 25 de marzo de 2026, pones: (2026, 2, 25)
-    // Nota: El mes empieza en 0 (Enero=0, Febrero=1, Marzo=2...)
+    // CAMBIA ESTA FECHA EN GITHUB PARA DESBLOQUEAR (Año, Mes-1, Día)
+    // Ejemplo: (2026, 2, 23) bloquea el 23 de Marzo de 2026.
     const FECHA_VENCIMIENTO = new Date(2026, 2, 23); 
 
     function verificarLicencia() {
         const hoy = new Date();
         const mainCard = document.getElementById('main-card');
-
         if (hoy > FECHA_VENCIMIENTO) {
             mainCard.classList.add('is-blocked');
         }
     }
-
     verificarLicencia();
 </script>
 
